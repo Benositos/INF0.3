@@ -1,11 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Stylizacja paznokci</title>
+    <link rel="stylesheet" href="styl.css">
+
 </head>
 <body>
     
+   <div id="kontener">
+
+         <aside>
+
+            <img src="pliki15/manicure.jpg" alt="Stylizacja paznokci">
+
+        </aside>
+
+        <main>
+
+            <header>
+
+                <h1>Twoje wymarzone paznokcie</h1>
+
+            </header>
+
+            <nav>
+
+                <button onmouseenter="zmianaKolor()" id="bt1">Kolor</button>
+                <button onmouseenter="zmianaKsztalt()" id="bt2">Ksztalt</button>
+                <button onmouseenter="zmianaWzor()" id="bt3">Wzor</button>
+
+            </nav>
+            
+            <section id="section1">
+
+                <h2>Kolor</h2>
+                <img src="pliki15/kolory.png" alt="Kolory paznokci"><br>
+                <input type="color" value="#FF0000">
+
+            </section>
+            <section id="section2">
+
+                <h2>Ksztalt</h2>
+                <img src="pliki15/ksztalt.png" alt="Ksztalty paznokci"><br>
+                <select name="ksztalty" id="ksztalty">
+
+                    <option value="migdal">migdal</option>
+                    <option value="zaokraglony">zaokraglony</option>
+                    <option value="kwadratowy">kwadratowy</option>
+                    <option value="balerina">balerina</option>
+                    <option value="zaokraglony">zaokragony kwadrat</option>
+
+                </select>
+
+            </section>
+            <section id="section3">
+    
+                <h2>Wzor</h2>
+                <!--SKRYPT 1-->
+
+                <p id="wyswietlanie"></p>
+
+                <script>
+
+                    let wys = document.getElementById("wyswietlanie");
+
+                    for(let i = 1; i < 11; i++)
+                    {
+
+                         wys.innerHTML += "<img src='pliki15/" + i + ".jpg' alt='"+i+"' title='"+i+"' class='wzory'>"
+
+                    }
+
+                </script>
+
+                <input type="number" min="1" max="10" step="1">
+
+            </section>
+
+        </main>
+
+   </div>
+
+    <footer>
+
+        <p>Autor strony: <em><b>10101010101</b></em></p>
+
+    </footer>
+
+    <script>
+
+
+        let jeden = document.getElementById("section1");
+        let dwa = document.getElementById("section2");
+        let trzy = document.getElementById("section3");
+
+        let bt1 = document.getElementById("bt1");
+        let bt2 = document.getElementById("bt2");
+        let bt3 = document.getElementById("bt3");
+
+
+        function zmianaKolor()
+        {
+            jeden.style.visibility = "visible";
+            dwa.style.visibility = "hidden";
+            trzy.style.visibility = "hidden";
+
+            bt1.style.backgroundColor = "salmon"
+            bt2.style.backgroundColor = "Crimson"
+            bt3.style.backgroundColor = "crimson"
+        }
+
+        function zmianaKsztalt()
+        {
+            jeden.style.visibility = "hidden";
+            dwa.style.visibility = "visible";
+            trzy.style.visibility = "hidden";
+
+            bt1.style.backgroundColor = "Crimson"
+            bt2.style.backgroundColor = "salmon"
+            bt3.style.backgroundColor = "crimson"
+        }
+
+        function zmianaWzor()
+        {
+            
+            jeden.style.visibility = "hidden";
+            dwa.style.visibility = "hidden";
+            trzy.style.visibility = "visible";
+
+            bt1.style.backgroundColor = "Crimson"
+            bt2.style.backgroundColor = "Crimson"
+            bt3.style.backgroundColor = "salmon"
+            
+        }
+
+    </script>
+
+
+
 </body>
 </html>
